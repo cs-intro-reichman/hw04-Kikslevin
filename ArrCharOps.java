@@ -71,7 +71,7 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
       for (int i = fromIndex; i < arr.length; i++) {
-        if (arr[1] ==ch) {
+        if (arr[i] ==ch) {
             return i;
         }
       }
@@ -115,7 +115,7 @@ public class ArrCharOps {
         int size = endIndex - beginIndex;
         char[] result = new char[size];
 
-        for (int i = beginIndex; i < size; i++){
+        for (int i = beginIndex; i < endIndex; i++){
             result [i - beginIndex] = arr[i];
         }
         return result;
@@ -169,10 +169,7 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        if (str1 == null || str2 == null) {
-            return -2;
-        }
-        
+
         int minlength = Math.min(str1.length(), str2.length());
 
         for (int i = 0; i < minlength; i++) {
