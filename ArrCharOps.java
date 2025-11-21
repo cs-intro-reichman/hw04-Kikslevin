@@ -71,7 +71,7 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
       for (int i = fromIndex; i < arr.length; i++) {
-        if (arr[i] ==ch) {
+        if (arr[i] == ch) {
             return i;
         }
       }
@@ -171,10 +171,11 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2) {
 
         int minlength = Math.min(str1.length(), str2.length());
+        if (str1 == null || str2 == null) return -2;
 
         for (int i = 0; i < minlength; i++) {
-            char ch1 = Character.toLowerCase(str1.charAt(i));
-            char ch2 = Character.toLowerCase(str2.charAt(i));
+            char ch1 = str1.charAt(i);
+            char ch2 = str2.charAt(i);
 
             if (ch1 < ch2){
             return -1;
@@ -183,12 +184,9 @@ public class ArrCharOps {
                 return 1;
         }
     }
-        if (str1.length() < str2.length()) {
-            return -1;
-        }
-        if (str1.length() > str2.length()) {
-            return 1;
-        }
+        if (str1.length() < str2.length()) return -1;
+        if (str1.length() > str2.length()) return 1;
+        
         return 0;
     }
 }
